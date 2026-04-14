@@ -1,0 +1,17 @@
+RewriteEngine On
+
+# Cegah directory listing
+Options -Indexes
+
+# Lindungi file sensitif
+<FilesMatch "\.(sql|log|md|env)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Charset default
+AddDefaultCharset UTF-8
+
+# Halaman error
+ErrorDocument 404 /index.php
+ErrorDocument 403 /index.php
